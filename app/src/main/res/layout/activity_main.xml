@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.zhouwei.circleindicatorview.MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
      <android.support.v4.view.ViewPager
          android:id="@+id/viewpager"
@@ -19,7 +18,7 @@
          android:src="#000000"
          android:alpha="0.6"
          />
-     <com.zhouwei.indicatorview.CircleIndicatorView
+     <cn.djzhao.indicatorview.CircleIndicatorView
          android:id="@+id/indicator_view"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -33,7 +32,7 @@
          app:indicatorColor="@color/colorAccent"
          app:indicatorTextColor="@android:color/white"
          />
-     <com.zhouwei.indicatorview.CircleIndicatorView
+     <cn.djzhao.indicatorview.CircleIndicatorView
          android:id="@+id/indicator_view1"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -49,7 +48,7 @@
          app:indicatorSpace="10dp"
          app:indicatorBorderWidth="0dp"
          />
-     <com.zhouwei.indicatorview.CircleIndicatorView
+     <cn.djzhao.indicatorview.CircleIndicatorView
          android:id="@+id/indicator_view2"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -59,7 +58,7 @@
          android:layout_above="@id/indicator_view1"
          />
 
-     <com.zhouwei.indicatorview.CircleIndicatorView
+     <cn.djzhao.indicatorview.CircleIndicatorView
          android:id="@+id/indicator_view3"
          android:layout_width="wrap_content"
          app:enableIndicatorColorFill="true"

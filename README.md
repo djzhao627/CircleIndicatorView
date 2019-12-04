@@ -1,11 +1,11 @@
-[![Release](https://jitpack.io/v/pinguo-zhouwei/CircleIndicatorView.svg)](https://jitpack.io/#pinguo-zhouwei/CircleIndicatorView)
+[![Release](https://jitpack.io/v/djzhao627/CircleIndicatorView.svg)](https://jitpack.io/#djzhao627/CircleIndicatorView)
 ### An IndicatorView For Android 
 
 一个轻量级的配合ViewPager 使用的IndicatorView(指示器)。
 
 效果图如下：
 
-![IndicatorView](indicatorView.gif)
+![IndicatorView](indicatorView.jpg)
 
 ### 特性
 它有一下特性：
@@ -19,6 +19,8 @@
 **4 ,配置灵活，简单**
 
 **5 ,支持点击Indicator 来切换View Pager**
+
+**6 ,小圆点设置了indicatorBorderWidth后，会添加indicatorColor色值描边**
 
 ### Dependency
 
@@ -35,7 +37,7 @@
 **2, app 层buid.gradle dependencies 中 添加如下代码：**
 
 ```java
-compile 'com.github.pinguo-zhouwei:CircleIndicatorView:v1.0.1'
+compile 'com.github.pinguo-zhouwei:CircleIndicatorView:v1.0.0'
 	
 ```
 
@@ -52,13 +54,14 @@ compile 'com.github.pinguo-zhouwei:CircleIndicatorView:v1.0.1'
 | indicatorSelectColor        | 设置指示器选中的颜色      |   颜色值    |
 | fill_mode        |   设置指示器的模式    |   枚举值：有三种，分别是letter,number和none|
 | enableIndicatorSwitch        | 设置是否点击Indicator切换ViewPager,默认为false      |   布尔值    |
+| enableIndicatorColorFill        | 是否开启颜色的填充（非小圆点使用）      |   布尔值    |
 
 ### 使用方法
 
 ** 1, xml 添加CircleIndicatorView,配置相关属性 **
 
   ```java
-   <com.zhouwei.indicatorview.CircleIndicatorView
+   <cn.djzhao.indicatorview.CircleIndicatorView
            android:id="@+id/indicator_view"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
