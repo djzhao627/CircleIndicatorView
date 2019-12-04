@@ -8,6 +8,7 @@
         <attr name="indicatorColor" format="color"/>
         <attr name="indicatorSelectColor" format="color"/>
         <attr name="enableIndicatorSwitch" format="boolean"/>
+        <attr name="enableIndicatorColorFill" format="boolean"/>
         <attr name="fill_mode">
             <enum name="letter" value="0"/>
             <enum name="number" value="1"/>

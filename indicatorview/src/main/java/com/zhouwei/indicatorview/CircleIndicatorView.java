@@ -42,6 +42,11 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
      * 是否允许点击Indicator切换ViewPager
      */
     private boolean mIsEnableClickSwitch = false;
+
+    /**
+     * 是否启用指示器颜色进行填充
+     */
+    private boolean mIsEnableIndicatorColorFill = false;
     public CircleIndicatorView(Context context) {
         super(context);
         init();
@@ -99,7 +104,7 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
     private void getAttr(Context context,AttributeSet attrs){
         TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.CircleIndicatorView);
         mRadius = (int) typedArray.getDimensionPixelSize(R.styleable.CircleIndicatorView_indicatorRadius,DisplayUtils.dpToPx(6));
-        mStrokeWidth = (int) typedArray.getDimensionPixelSize(R.styleable.CircleIndicatorView_indicatorBorderWidth,DisplayUtils.dpToPx(2));
+        mStrokeWidth = (int) typedArray.getDimensionPixelSize(R.styleable.CircleIndicatorView_indicatorBorderWidth,DisplayUtils.dpToPx(0));
         mSpace = typedArray.getDimensionPixelSize(R.styleable.CircleIndicatorView_indicatorSpace,DisplayUtils.dpToPx(5));
         // color
         mTextColor = typedArray.getColor(R.styleable.CircleIndicatorView_indicatorTextColor,Color.BLACK);
@@ -107,6 +112,7 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
         mDotNormalColor = typedArray.getColor(R.styleable.CircleIndicatorView_indicatorColor,Color.GRAY);
 
         mIsEnableClickSwitch = typedArray.getBoolean(R.styleable.CircleIndicatorView_enableIndicatorSwitch,false);
+        mIsEnableIndicatorColorFill = typedArray.getBoolean(R.styleable.CircleIndicatorView_enableIndicatorColorFill,false);
         int fillMode = typedArray.getInt(R.styleable.CircleIndicatorView_fill_mode,2);
         if(fillMode == 0){
             mFillMode = FillMode.LETTER;
@@ -160,6 +166,14 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
             float x = indicator.cx;
 
             float y = indicator.cy;
+
+            // 小圆点加背景色描边 和 非小圆点添加背景色填充
+            boolean isAddColorFill = mIsEnableIndicatorColorFill || (mFillMode == FillMode.NONE && mStrokeWidth > 0);
+            if (isAddColorFill) {
+                mCirclePaint.setColor(mDotNormalColor);
+                mCirclePaint.setStyle(Paint.Style.FILL);
+                canvas.drawCircle(x, y, mRadius + mStrokeWidth, mCirclePaint);
+            }
 
             if(mSelectPosition == i){
                 mCirclePaint.setStyle(Paint.Style.FILL);

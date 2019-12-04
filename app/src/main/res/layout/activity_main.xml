@@ -54,6 +54,7 @@
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_centerHorizontal="true"
+         app:indicatorBorderWidth="3dp"
          android:layout_marginBottom="30dp"
          android:layout_above="@id/indicator_view1"
          />
@@ -61,6 +62,7 @@
      <com.zhouwei.indicatorview.CircleIndicatorView
          android:id="@+id/indicator_view3"
          android:layout_width="wrap_content"
+         app:enableIndicatorColorFill="true"
          android:layout_height="wrap_content"
          android:layout_centerHorizontal="true"
          android:layout_marginBottom="30dp"
