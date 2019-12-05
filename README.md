@@ -34,10 +34,10 @@
 }
 ```
 
-**2, app 层buid.gradle dependencies 中 添加如下代码：**
+**2, app 下的buid.gradle dependencies 中 添加如下代码：**
 
 ```java
-compile 'com.github.djzhao627:CircleIndicatorView:v1.0.0'
+compile 'com.github.djzhao627:CircleIndicatorView:v1.0.2'
 	
 ```
 
