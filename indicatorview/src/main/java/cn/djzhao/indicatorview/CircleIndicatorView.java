@@ -48,6 +48,15 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
      */
     private boolean mIsEnableIndicatorColorFill = false;
 
+    /**
+     * 是否是无限轮播（隐藏首尾两个指示器）
+     */
+    private boolean isInfinite;
+
+    public void setInfinite(boolean infinite) {
+        isInfinite = infinite;
+    }
+
     public CircleIndicatorView(Context context) {
         super(context);
         init();
@@ -150,7 +159,6 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-
         int width = (mRadius + mStrokeWidth) * 2 * mCount + mSpace * (mCount - 1);
         int height = mRadius * 2 + mSpace * 2;
 
@@ -163,6 +171,11 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
     protected void onDraw(Canvas canvas) {
 
         for (int i = 0; i < mIndicators.size(); i++) {
+
+            // 跳过首尾
+            if (isInfinite && (i == 0 || i == mCount - 1)) {
+                continue;
+            }
 
             Indicator indicator = mIndicators.get(i);
             float x = indicator.cx;

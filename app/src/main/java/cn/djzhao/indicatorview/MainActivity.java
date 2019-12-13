@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         CircleIndicatorView indicatorView1 = (CircleIndicatorView) findViewById(cn.djzhao.circleindicatorview.R.id.indicator_view1);
         CircleIndicatorView indicatorView2 = (CircleIndicatorView) findViewById(cn.djzhao.circleindicatorview.R.id.indicator_view2);
+        indicatorView2.setInfinite(true);
 
         indicatorView1.setUpWithViewPager(mViewPager);
         indicatorView2.setUpWithViewPager(mViewPager);
